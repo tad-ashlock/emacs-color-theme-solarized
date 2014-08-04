@@ -387,9 +387,9 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
              (flymake-warnline ; WarningMsg
               ((t (,@fmt-bold ,@fg-red ,@bg-back))))
              ;; column-marker
-             (column-marker-1 ((t (,@bg-base01))))
-             (column-marker-2 ((t (,@bg-cyan))))
-             (column-marker-3 ((t (,@bg-violet))))
+             (column-marker-1 ((t (,@fg-base03 ,@bg-base01))))
+             (column-marker-2 ((t (,@fg-base03 ,@bg-cyan))))
+             (column-marker-3 ((t (,@fg-base03 ,@bg-violet))))
              ;; jabber
              (jabber-activity-face ((t (,@fmt-bold ,@fg-red))))
              (jabber-activity-personal-face ((t (,@fmt-bold ,@fg-blue))))
