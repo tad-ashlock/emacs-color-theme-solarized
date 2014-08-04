@@ -32,6 +32,17 @@ degraded color mode to test the approximate color values for accuracy."
   :type 'boolean
   :group 'solarized)
 
+(defcustom solarized-termcolors 0
+  "This setting applies to emacs in terminal (non-GUI) mode.
+If set to 16, emacs will use the terminal emulator's colorscheme (best option
+as long as you've set your emulator's colors to the Solarized palette). If
+set to 256 and your terminal is capable of displaying 256 colors, emacs will
+use the 256 degraded color mode.  If set to 0, then the color mode will be
+selected automatically based on the display's number of colors."
+  :type 'integer
+  :options '(0 16 256)
+  :group 'solarized)
+
 (defcustom solarized-contrast 'normal
   "Stick with normal! It's been carefully tested. Setting this option to high or
 low does use the same Solarized palette but simply shifts some values up or
@@ -91,10 +102,14 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                              (if solarized-degrade
                                  3
                                (if solarized-broken-srgb 2 1))
-                           (case (display-color-cells)
-                             (16 4)
-                             (8  5)
-                             (otherwise 3)))))
+                          (case solarized-termcolors
+                            (16 4)
+                            (256 3)
+                            (otherwise
+                             (case (display-color-cells)
+                               (16 4)
+                               (8  5)
+                               (otherwise 3)))))))
              (nth index (assoc name solarized-colors)))))
     (let ((base03      (find-color 'base03))
           (base02      (find-color 'base02))
@@ -123,7 +138,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
         (rotatef base01 base1)
         (rotatef base00 base0))
       (let ((back base03))
-        (cond ((< (display-color-cells) 16)
+        (cond ((string= base03 "black") ; terminal, 8 colors
                (setf back nil))
               ((eq 'high solarized-contrast)
                (let ((orig-base3 base3))
@@ -157,10 +172,8 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
               (fg-base02 `(:foreground ,base02))
               (fg-base01 `(:foreground ,base01))
               (fg-base00 `(:foreground ,base00))
-              (fg-base0 `(:foreground ,(when (<= 16 (display-color-cells))
-                                         base0)))
-              (fg-base1 `(:foreground ,(when (<= 16 (display-color-cells))
-                                         base1)))
+              (fg-base0 `(:foreground ,base0))
+              (fg-base1 `(:foreground ,base1))
               (fg-base2 `(:foreground ,base2))
               (fg-base3 `(:foreground ,base3))
               (fg-green `(:foreground ,green))
@@ -549,11 +562,10 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
 	     (term-color-cyan ((t ( ,@fg-cyan))))
 	     (term-color-white ((t ( ,@fg-base00)))))
 
-            ((foreground-color . ,(when (<= 16 (display-color-cells)) base0))
+            ((foreground-color . ,base0)
              (background-color . ,back)
              (background-mode . ,mode)
-             (cursor-color . ,(when (<= 16 (display-color-cells))
-                                base0))
+             (cursor-color . ,base0)
 	     (ansi-color-names-vector . [,base02 ,red ,green ,yellow ,blue ,magenta ,cyan ,base00]))))))))
 
 (defmacro create-solarized-theme (mode)
