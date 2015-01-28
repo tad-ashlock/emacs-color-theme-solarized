@@ -97,7 +97,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
   (fset 'which-flet 'flet))
 
 (defun solarized-color-definitions (mode)
-  (which-flet ((find-color (name)
+  (cl-flet ((find-color (name)
            (let ((index (if window-system
                              (if solarized-degrade
                                  3
