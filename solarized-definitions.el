@@ -376,12 +376,12 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
              (widget-single-line-field ((t (:inherit widget-field))))
              ;; extra modules
              ;; -------------
-	     ;; ace-jump-mode
-	     (ace-jump-face-background ((t (,@fmt-none ,@fg-base01))))
-	     (ace-jump-face-foreground ((t (,@fmt-bold ,@fg-red))))
-	     ;; bm visual bookmarks
-	     (bm-fringe-face ((t (,@bg-orange ,@fg-base03))))
-	     (bm-fringe-persistent-face ((t (,@bg-blue ,@fg-base03))))
+             ;; ace-jump-mode
+             (ace-jump-face-background ((t (,@fmt-none ,@fg-base01))))
+             (ace-jump-face-foreground ((t (,@fmt-bold ,@fg-red))))
+             ;; bm visual bookmarks
+             (bm-fringe-face ((t (,@bg-orange ,@fg-base03))))
+             (bm-fringe-persistent-face ((t (,@bg-blue ,@fg-base03))))
              ;; Flymake
              (flymake-errline ((t (,@fmt-revr ,@fg-red ,@bg-back)))) ; ErrorMsg
              (flymake-warnline ; WarningMsg
@@ -407,10 +407,10 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
              (jabber-roster-user-offline ((t (,@fg-base01))))
              (jabber-roster-user-online ((t (,@fmt-bold ,@fg-blue))))
              (jabber-roster-user-xa ((t (,@fmt-ital ,@fg-magenta))))
-	     ;; git-gutter
-	     (git-gutter:modified ((t (,@fg-violet))))
-	     (git-gutter:added ((t (,@fg-green))))
-	     (git-gutter:deleted ((t (,@fg-red))))
+             ;; git-gutter
+             (git-gutter:modified ((t (,@fg-violet))))
+             (git-gutter:added ((t (,@fg-green))))
+             (git-gutter:deleted ((t (,@fg-red))))
              ;; gnus - these are taken from mutt, not VIM
              (gnus-cite-1 ((t (,@fmt-none ,@fg-blue)))) ; quoted
              (gnus-cite-2 ((t (,@fmt-none ,@fg-cyan)))) ; quoted1
@@ -552,34 +552,34 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
              ;;flyspell
              (flyspell-incorrect ((t (,@fg-red))))
              (flyspell-duplicate ((t (,@fg-yellow))))
-	     ;;ansi-term
-	     (term-color-black ((t ( ,@fg-base02))))
-	     (term-color-red ((t ( ,@fg-red))))
-	     (term-color-green ((t ( ,@fg-green))))
-	     (term-color-yellow ((t ( ,@fg-yellow))))
-	     (term-color-blue ((t ( ,@fg-blue))))
-	     (term-color-magenta ((t ( ,@fg-magenta))))
-	     (term-color-cyan ((t ( ,@fg-cyan))))
-	     (term-color-white ((t ( ,@fg-base00))))
-	     ;;ediff
-	     (ediff-current-diff-A ((t (,@fg-base03 ,@bg-base2))))
-	     (ediff-current-diff-B ((t (,@fg-base03 ,@bg-base2))))
-	     (ediff-current-diff-C ((t (,@fg-base03 ,@bg-base2))))
-	     (ediff-fine-diff-A ((t (,@fg-red ,@bg-base2))))
-	     (ediff-fine-diff-B ((t (,@fg-red ,@bg-base2))))
-	     (ediff-fine-diff-C ((t (,@fg-red ,@bg-base2))))
-	     (ediff-even-diff-A ((t (,@fg-base03 ,@bg-base01))))
-	     (ediff-even-diff-B ((t (,@fg-base03 ,@bg-base01))))
-	     (ediff-even-diff-C ((t (,@fg-base03 ,@bg-base01))))
-	     (ediff-odd-diff-A ((t (,@fg-base03 ,@bg-base01))))
-	     (ediff-odd-diff-B ((t (,@fg-base03 ,@bg-base01))))
-	     (ediff-odd-diff-C ((t (,@fg-base03 ,@bg-base01)))))
+             ;;ansi-term
+             (term-color-black ((t ( ,@fg-base02))))
+             (term-color-red ((t ( ,@fg-red))))
+             (term-color-green ((t ( ,@fg-green))))
+             (term-color-yellow ((t ( ,@fg-yellow))))
+             (term-color-blue ((t ( ,@fg-blue))))
+             (term-color-magenta ((t ( ,@fg-magenta))))
+             (term-color-cyan ((t ( ,@fg-cyan))))
+             (term-color-white ((t ( ,@fg-base00))))
+             ;;ediff
+             (ediff-current-diff-A ((t (,@fg-base03 ,@bg-base2))))
+             (ediff-current-diff-B ((t (,@fg-base03 ,@bg-base2))))
+             (ediff-current-diff-C ((t (,@fg-base03 ,@bg-base2))))
+             (ediff-fine-diff-A ((t (,@fg-red ,@bg-base2))))
+             (ediff-fine-diff-B ((t (,@fg-red ,@bg-base2))))
+             (ediff-fine-diff-C ((t (,@fg-red ,@bg-base2))))
+             (ediff-even-diff-A ((t (,@fg-base03 ,@bg-base01))))
+             (ediff-even-diff-B ((t (,@fg-base03 ,@bg-base01))))
+             (ediff-even-diff-C ((t (,@fg-base03 ,@bg-base01))))
+             (ediff-odd-diff-A ((t (,@fg-base03 ,@bg-base01))))
+             (ediff-odd-diff-B ((t (,@fg-base03 ,@bg-base01))))
+             (ediff-odd-diff-C ((t (,@fg-base03 ,@bg-base01)))))
 
             ((foreground-color . ,base0)
              (background-color . ,back)
              (background-mode . ,mode)
              (cursor-color . ,base0)
-	     (ansi-color-names-vector . [,base02 ,red ,green ,yellow ,blue ,magenta ,cyan ,base00]))))))))
+             (ansi-color-names-vector . [,base02 ,red ,green ,yellow ,blue ,magenta ,cyan ,base00]))))))))
 
 (defmacro create-solarized-theme (mode)
   (let* ((theme-name (intern (concat "solarized-" (symbol-name mode))))
