@@ -245,9 +245,9 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (header-line (,@fg-base0 ,@bg-base02 ,@fmt-revbb)) ; Pmenu
                 (highlight (,@bg-base02))
                 (hl-line (:underline ,opt-under ,@bg-base02)) ; CursorLine
-                (isearch (,@fmt-stnd ,@fg-orange ,@bg-back)) ; IncSearch
+                (isearch (,@fmt-stnd ,@fg-green ,@bg-back)) ; IncSearch
                 (isearch-fail (,@fmt-stnd ,@fg-orange ,@bg-back)) ; IncSearch
-                (lazy-highlight (,@fmt-revr ,@fg-yellow ,@bg-back)) ; Search
+                (lazy-highlight (,@fmt-revr ,@fg-blue ,@bg-back)) ; Search
                 (link (,@fmt-undr ,@fg-violet))
                 (link-visited (,@fmt-undr ,@fg-magenta))
                 (match ((t (,@fmt-revr ,@fg-yellow ,@bg-back)))) ; Occur
@@ -558,14 +558,14 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (slime-style-warning-face (,@fmt-bold ,@fg-orange))
                 (slime-warning-face (,@fmt-bold ,@fg-red)) ; WarningMsg
                 ;; whitespace
-                (whitespace-empty (,@fg-red))
+                (whitespace-empty (,@fmt-revr ,@fg-blue))
                 (whitespace-hspace (,@fg-orange))
                 (whitespace-indentation (,@fg-base02))
                 (whitespace-space (,@fg-base02))
                 (whitespace-space-after-tab (,@fg-cyan))
                 (whitespace-space-before-tab (,@fmt-bold ,@fg-red))
                 (whitespace-tab (,@fg-base02))
-                (whitespace-trailing (,@fmt-bold ,@fg-red ,@bg-base02))
+                (whitespace-trailing (,@fmt-revr ,@fg-red ,@bg-base02))
                 (whitespace-highlight-face (,@fg-red ,@bg-blue))
                 (whitespace-line (,@fg-magenta))
                 ;; rcirc
@@ -590,7 +590,46 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (term-color-blue (,@fg-blue))
                 (term-color-magenta (,@fg-magenta))
                 (term-color-cyan (,@fg-cyan))
-                (term-color-white (,@fg-base00)))))))
+                (term-color-white (,@fg-base00))
+                ;;ediff
+                (ediff-current-diff-A (,@fg-base03 ,@bg-base2))
+                (ediff-current-diff-B (,@fg-base03 ,@bg-base2))
+                (ediff-current-diff-C (,@fg-base03 ,@bg-base2))
+                (ediff-fine-diff-A (,@fg-red ,@bg-base2))
+                (ediff-fine-diff-B (,@fg-red ,@bg-base2))
+                (ediff-fine-diff-C (,@fg-red ,@bg-base2))
+                (ediff-even-diff-A (,@fg-base03 ,@bg-base01))
+                (ediff-even-diff-B (,@fg-base03 ,@bg-base01))
+                (ediff-even-diff-C (,@fg-base03 ,@bg-base01))
+                (ediff-odd-diff-A (,@fg-base03 ,@bg-base01))
+                (ediff-odd-diff-B (,@fg-base03 ,@bg-base01))
+                (ediff-odd-diff-C (,@fg-base03 ,@bg-base01))
+                ;;dired+
+                (diredp-dir-heading (,@fg-blue ,@bg-base03))
+                (diredp-deletion (,@fg-base03 ,@bg-red))
+                (diredp-deletion-file-name (,@fg-base03 ,@bg-red))
+                (diredp-flag-mark (,@fg-base03 ,@bg-cyan))
+                (diredp-flag-mark-line (,@fg-base03 ,@bg-cyan))
+                (diredp-file-suffix (,@fg-green ,@bg-base03))
+                (diredp-number (,@fg-yellow ,@bg-base03))
+                (diredp-symlink (,@fg-magenta ,@bg-base03))
+                (diredp-date-time (,@fg-base1 ,@bg-base03))
+                (diredp-file-name (,@fg-base2 ,@bg-base03))
+                (diredp-ignored-file-name (,@fg-base01 ,@bg-base03))
+                (diredp-compressed-file-suffix (,@fg-violet ,@bg-base03))
+                (diredp-executable-tag (,@fg-red ,@bg-base03))
+                (diredp-dir-priv (,@fg-cyan ,@bg-base03))
+                (diredp-exec-priv (,@fg-red ,@bg-base03))
+                (diredp-other-priv (,@fg-base00 ,@bg-base03))
+                (diredp-write-priv (,@fg-orange ,@bg-base03))
+                (diredp-read-priv (,@fg-base00 ,@bg-base03))
+                (diredp-no-priv (,@fg-base00 ,@bg-base03))
+                (diredp-rare-priv (,@fg-red ,@bg-base03))
+                (diredp-link-priv (,@fg-magenta ,@bg-base03))
+                (diredp-autofile-name (,@fg-base01 ,@bg-base03))
+                (diredp-tagged-autofile-name (,@fg-base01 ,@bg-base03))
+                (diredp-mode-line-marked (,@fg-cyan ,@bg-base03))
+                (diredp-mode-line-flagged (,@fg-red ,@bg-base03)))))))
 
 ;;;###autoload
 (when (boundp 'custom-theme-load-path)
