@@ -225,6 +225,15 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
           (fmt-revbbu `(:weight ,bright-bold :slant normal :underline ,underline :inverse-video t)))
       (eval-after-load 'ansi-color
         '(setf ansi-color-names-vector [,base02 ,red ,green ,yellow ,blue ,magenta ,cyan ,base00]))
+      (when (not (display-graphic-p)) ; running in a TTY?
+        (tty-color-define "brightblack" 8)
+        (tty-color-define "brightred" 9)
+        (tty-color-define "brightgreen" 10)
+        (tty-color-define "brightyellow" 11)
+        (tty-color-define "brightblue" 12)
+        (tty-color-define "brightmagenta" 13)
+        (tty-color-define "brightcyan" 14)
+        (tty-color-define "brightwhite" 15))
       (mapcar (lambda (face) (apply 'create-face-spec face))
               `(;; basic
                 (default (,@fg-base0 ,@bg-back))   ; Normal
