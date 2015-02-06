@@ -445,9 +445,9 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (flymake-errline (,@fmt-bold ,@fg-red)) ; Error
                 (flymake-warnline (,@fmt-bold ,@fg-red))
                 ;; column-marker
-                (column-marker-1 (,@bg-base01))
-                (column-marker-2 (,@bg-cyan))
-                (column-marker-3 (,@bg-violet))
+                (column-marker-1 (,@fg-base03 ,@bg-base01))
+                (column-marker-2 (,@fg-base03 ,@bg-cyan))
+                (column-marker-3 (,@fg-base03 ,@bg-violet))
                 ;; jabber
                 (jabber-activity-face (,@fmt-bold ,@fg-red))
                 (jabber-activity-personal-face (,@fmt-bold ,@fg-blue))
