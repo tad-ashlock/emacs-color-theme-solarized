@@ -585,7 +585,7 @@ the \"Gen RGB\" column in solarized-definitions.el to improve them further."
                 (whitespace-space (,@fg-base02))
                 (whitespace-space-after-tab (,@fg-cyan))
                 (whitespace-space-before-tab (,@fmt-bold ,@fg-red))
-                (whitespace-tab (,@fg-base02))
+                (whitespace-tab (,@bg-base02))
                 (whitespace-trailing (,@fmt-revr ,@fg-red ,@bg-base02))
                 (whitespace-highlight-face (,@fg-red ,@bg-blue))
                 (whitespace-line (,@fg-magenta))
